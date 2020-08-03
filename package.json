@@ -5,11 +5,25 @@
   "repository": "git@github.com:alehkot/eslint-ts-quickstart.git",
   "author": "Aleh Kot <kot.oleg@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "build": "npm run compile",
+    "clean": "rimraf ./dist/",
+    "compile": "tsc",
+    "lint": "eslint '**/*.ts'",
+    "prepare": "npm run compile",
+    "pretest": "npm run compile",
+    "presystem-test": "npm run compile",
+    "fix": "eslint --fix '**/*.ts'"
+  },
+  "engines": {
+    "node": ">=10"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^3.7.1",
     "@typescript-eslint/parser": "^3.7.1",
     "eslint": "^7.6.0",
     "eslint-plugin-node": "^11.1.0",
+    "rimraf": "^3.0.2",
     "typescript": "^3.9.7"
   }
 }
